@@ -102,7 +102,7 @@ class StatePreparation(Gate):
         self._from_int = isinstance(params, int)
 
         # if initialized from a vector, check that the parameters are normalized
-        if not self._from_label and not self._from_int:
+        if not self._from_label and not self._from_int  and normalize :
             norm = np.linalg.norm(params)
             if normalize:
                 params = np.array(params, dtype=np.complex128) / norm
